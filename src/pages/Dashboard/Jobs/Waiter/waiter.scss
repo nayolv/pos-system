@@ -1,0 +1,65 @@
+.waiter-container {
+
+  .ticket-container {
+    width: 35%;
+    height: 100vh;
+
+    .send-btn {
+      width: 100%;
+    }
+
+    .header-table {
+      .icon-table {
+        margin-right: 5px;
+      }
+
+      .input-num-table {
+        max-width: 50px;
+        border-radius: 5px;
+        border: 1px solid #4e4e4e;
+      }
+    }
+
+    .waiter-table {
+      width: 100%;
+      height: 400px;
+      margin-bottom: 3rem;
+    }
+
+  }
+
+  .menu-container {
+    width: 65%;
+    height: 100vh;
+
+    .product-card {
+      width: 200px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 10px;
+      padding: 10px;
+      transition: transform 0.3s;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        max-height: 150px;
+        object-fit: cover;
+        border-radius: 8px 8px 0 0;
+      }
+
+      .product-card-content {
+        width: 100%;
+        border-radius: 0 0 8px 8px;
+        padding: 10px;
+        text-align: center;
+      }
+    }
+
+    .product-card:hover {
+      transform: scale(1.1);
+    }
+  }
+}

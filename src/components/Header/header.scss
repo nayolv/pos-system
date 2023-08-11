@@ -1,0 +1,17 @@
+.header-container {
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    .menu-container {
+        ul {
+            li {
+                a {
+                    text-decoration: none;
+                    margin: 10px;
+                    color: #000;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
