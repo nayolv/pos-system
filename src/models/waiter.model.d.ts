@@ -6,6 +6,11 @@ export interface MenuDto {
     setOrders: Dispatch<SetStateAction<OrderDto[]>>
 }
 
+export interface FormatDateDto {
+    hour: string
+    date: string
+}
+
 export interface ProductDto {
     id: string
     name: string
@@ -34,17 +39,17 @@ export interface TicketDto {
     setOrders: Dispatch<SetStateAction<OrderDto[]>>
 }
 
-export type OrderStatus = 'pending' | 'progress' | 'success';
+export type OrderStatus = 'pending' | 'in_progress' | 'cancel' | 'success';
 
 export interface OrderRequestBody {
-        id?: string,
-        table: string,
-        products: OrderDto[]
-        entry_hour: string
-        exit_hour?: string
-        date: string
-        time?: string
-        status: OrderStatus
+    id?: string,
+    table: string,
+    products: OrderDto[]
+    entry_hour: string
+    exit_hour?: string
+    date: string
+    time?: string
+    status: OrderStatus
 }
 
 export interface WaiterTableDto {

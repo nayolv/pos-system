@@ -1,14 +1,17 @@
 import { Route, Routes, useLocation } from "react-router-dom"
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import routes from "./router/routes"
 import Protected from "./components/Protected/Protected"
 import { Header } from "./components/Header/Header";
+const queryClient = new QueryClient()
 
 function App() {
+
   const auth = localStorage.getItem('auth');
   const location = useLocation();
 
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       {
         location.pathname !== '/' ?
           <header>
@@ -37,7 +40,7 @@ function App() {
       </main>
       {/* <footer>
       </footer> */}
-    </>
+    </QueryClientProvider>
   )
 }
 

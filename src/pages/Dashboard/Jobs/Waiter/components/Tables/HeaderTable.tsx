@@ -7,7 +7,6 @@ import { debounce } from '../../../../../../hepers/debounce';
 import { HeaderTableDto } from '../../../../../../models/waiter.model';
 
 export const HeaderTable: React.FC<HeaderTableDto> = ({ formattedTime, table, setTable }) => {
-
     const userJSON = localStorage.getItem("user");
     const user: UserDto = userJSON ? JSON.parse(userJSON) : null;
 
@@ -26,17 +25,16 @@ export const HeaderTable: React.FC<HeaderTableDto> = ({ formattedTime, table, se
     }
 
     return (
-        <>
-
-            <div className='d-flex justify-content-around align-items-center header-table'>
-                <p className='d-flex align-items-center'><PersonRoundedIcon className='icon-table' /> {user != null ? `${user.firstName} ${user.lastName}` : ''}</p>
-                <p className='d-flex align-items-center'><TableRestaurantRoundedIcon className='icon-table' /> <input className='input-num-table' value={table} type="number" min={1} max={30} onChange={(e) => handleChangeTable(e)} /> </p>
-                <p className='d-flex align-items-center text-time'><QueryBuilderRoundedIcon className='icon-table' />
-                    {
-                        formattedTime
-                    }
-                </p>
-            </div>
-        </>
+        <div className='d-flex justify-content-around align-items-center header-table'>
+            <p className='d-flex align-items-center'><PersonRoundedIcon className='icon-table' />
+                {user != null ? `${user.firstName} ${user.lastName}` : ''}
+            </p>
+            <p className='d-flex align-items-center'><TableRestaurantRoundedIcon className='icon-table' />
+                <input className='input-num-table' value={table} type="number" min={1} max={30} onChange={(e) => handleChangeTable(e)} />
+            </p>
+            <p className='d-flex align-items-center text-time'><QueryBuilderRoundedIcon className='icon-table' />
+                {formattedTime}
+            </p>
+        </div>
     )
 }
