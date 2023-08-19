@@ -1,27 +1,44 @@
-# React + TypeScript + Vite
+# Sistema POS Increíble
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido al repositorio del **System POS**! Este proyecto de práctica te ofrece una introducción al desarrollo de un Sistema de Punto de Venta (POS) utilizando React y TypeScript.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🚀 Interfaz de Usuario Intuitiva: Disfruta de una interfaz amigable y fácil de usar que simplifica la gestión de ventas.
+- 💡 Control de Inventario: Mantén un seguimiento de tus productos, precios y disponibilidad de forma sencilla.
+- ⚡ Rendimiento Ágil: Experimenta una aplicación ágil y sin demoras molestas.
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clona el repositorio: `git clone https://github.com/nayolv/pos-system.git`
+2. Navega al directorio del proyecto: `cd pos-system`
+3. Instala las dependencias: `npm install`
 
-- Configure the top-level `parserOptions` property like this:
+## Uso
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+1. Inicia el servidor de desarrollo: `npm start`
+2. Abre tu navegador y visita `http://localhost:3000`
+3. Explora las funciones de venta, gestión de productos y más.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Tecnologías Utilizadas
+
+- React
+- TypeScript
+- Material-UI
+- React-query
+
+## Contribuciones
+
+¡Siéntete libre de hacer contribuciones! Si encuentras errores o tienes ideas para nuevas características, abre un *issue* o envía una solicitud de *pull*.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+## Agradecimientos
+
+Agradecemos a la comunidad de desarrollo por su apoyo y recursos que hacen posible proyectos como este.
+
+---
+
+¡Esperamos que disfrutes aprendiendo y construyendo con el **System POS **! 
