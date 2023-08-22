@@ -1,6 +1,6 @@
 # POS System
 
-¡Bienvenido al repositorio **System POS**! Este proyecto de práctica te ofrece una introducción al desarrollo de un Sistema de Punto de Venta (POS) utilizando React y TypeScript.
+¡Bienvenido al repositorio **POS System**! Este proyecto de práctica te ofrece una introducción al desarrollo de un Sistema de Punto de Venta (POS) utilizando React y TypeScript.
 
 ## Características
 
