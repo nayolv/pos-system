@@ -39,7 +39,7 @@ export interface TicketDto {
     setOrders: Dispatch<SetStateAction<OrderDto[]>>
 }
 
-export type OrderStatus = 'pending' | 'in_progress' | 'cancel' | 'success';
+export type OrderStatus = 'pending' | 'in_progress' | 'cancel' | 'success' | 'delivered';
 
 export interface OrderRequestBody {
     id?: string,

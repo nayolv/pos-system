@@ -4,7 +4,15 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #F6F6F6;
+}
 
+.margin-top-component {
+  margin-top: 90px;
+}
+
+.layout-container {
+  width: 100%;
 }

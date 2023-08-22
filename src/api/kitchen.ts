@@ -13,7 +13,7 @@ export const getOrdersByStatus = async (status: string) => {
     return products;
 }
 
-export const patchOrderStatus = async (body: OrderStatusBody, id: string | undefined) => {
+export const updateOrderStatus = async (body: OrderStatusBody, id: string | undefined) => {
     const requestOptions = {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },

@@ -1,6 +1,7 @@
 .waiter-container {
 
   .ticket-container {
+    max-width: 35%;
     width: 35%;
     height: 100vh;
 
@@ -29,6 +30,7 @@
   }
 
   .menu-container {
+    max-width: 65%;
     width: 65%;
     height: 100vh;
 
@@ -60,6 +62,76 @@
 
     .product-card:hover {
       transform: scale(1.1);
+    }
+  }
+}
+
+
+.ready-orders-container {
+  .order-card {
+    padding: 1rem;
+    margin: 10px;
+    min-height: 300px;
+    width: 230px;
+
+    &__header {
+      p {
+        margin: 0;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      span {
+        font-size: 13px;
+      }
+    }
+
+    &__body {
+      height: 100%;
+
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+      }
+    }
+
+    &__actions {
+      width: 100%;
+
+      .action-icons {
+        &__accept {
+          color: #7197ff
+        }
+
+        &__cancel {
+          color: #d10000
+        }
+
+        &__send {
+          color: #00b919;
+        }
+      }
+    }
+
+    hr {
+      border-width: 3px;
+    }
+
+    .pending-color {
+      color: #c7c7c7;
+    }
+
+    .in_progress-color {
+      color: #7197ff;
+    }
+
+    .cancel-color {
+      color: #d10000
+    }
+
+    .success-color {
+      color: #00b919;
     }
   }
 }

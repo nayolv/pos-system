@@ -1,0 +1,17 @@
+.sidebar-container {
+    &__items {
+        display: block;
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .active {
+            color: #001ea1;
+            font-weight: bold;
+        }
+
+        .active:hover {}
+    }
+}

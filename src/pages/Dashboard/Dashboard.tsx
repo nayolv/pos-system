@@ -3,15 +3,16 @@ import Admin from "./Jobs/Admin/Admin";
 import { Kitchen } from "./Jobs/Kitchen/Kitchen";
 import { Waiter } from "./Jobs/Waiter/Waiter";
 
+
 export const Dashboard = () => {
-    const user = localStorage.getItem("user");
-    const userJSON: UserDto = user != null ? JSON.parse(user) : {}
+    const userJSON = localStorage.getItem("user");
+    const user: UserDto = userJSON ? JSON.parse(userJSON) : null;
 
     return (
-        <div>
-            {userJSON.role === "waiter" && <Waiter />}
-            {userJSON.role === "kitchen" && <Kitchen />}
-            {userJSON.role === "admin" && <Admin />}
+        <div className="">
+            {user.role === "waiter" && <Waiter />}
+            {user.role === "kitchen" && <Kitchen />}
+            {user.role === "admin" && <Admin />}
         </div>
     )
 }

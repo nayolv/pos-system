@@ -4,16 +4,16 @@ import AcceptIcon from '@mui/icons-material/CheckCircleRounded';
 import CancelIcon from '@mui/icons-material/CancelRounded';
 import DoneIcon from '@mui/icons-material/SendRounded';
 import { OrdersDto } from "../../../../models/kitchen.model";
-import { patchOrderStatus } from "../../../../api/kitchen";
 import { CANCEL, IN_PROGRESS, PENDING, SUCCESS } from "../../../../constants/constants";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
+import { updateOrderStatus } from "../../../../api/kitchen";
 
 const Orders: React.FC<OrdersDto> = ({ orders, status }) => {
     const queryClient = useQueryClient();
     const [orderIdToUpdate, setOrderIdToUpdate] = useState<string | undefined>();
 
-    const mutation = useMutation((newStatus: string) => patchOrderStatus({ status: newStatus }, orderIdToUpdate), {
+    const mutation = useMutation((newStatus: string) => updateOrderStatus({ status: newStatus }, orderIdToUpdate), {
         onSuccess: () => {
             const statusQueryKey = ['status'];
             const ordersByStatusQueryKey = ['orders', status];
@@ -30,7 +30,7 @@ const Orders: React.FC<OrdersDto> = ({ orders, status }) => {
     return (
         <div className="d-flex flex-wrap">
             {
-                orders.map(({ id, date, entry_hour, table, products, status }, i) => (
+                orders?.map(({ id, date, entry_hour, table, products, status }, i) => (
                     <Paper key={i} className="order-card d-flex flex-column justify-content-between" elevation={2}>
                         <div className="order-card__header">
                             <div className="d-flex justify-content-between align-items-center">
@@ -44,7 +44,7 @@ const Orders: React.FC<OrdersDto> = ({ orders, status }) => {
                         <div className="order-card__body">
                             <ul>
                                 {
-                                    products.map((product) => (
+                                    products?.map((product) => (
                                         <li key={product.id}>
                                             <strong> {product.quantity}</strong> {product.product}
                                         </li>
@@ -62,7 +62,6 @@ const Orders: React.FC<OrdersDto> = ({ orders, status }) => {
                                             disabled={acceptIconCondition(status)}
                                             aria-label="accept"
                                             onClick={() => {
-                                                // UpdateOrderStatus({ status: IN_PROGRESS }, id)
                                                 setOrderIdToUpdate(id);
                                                 mutation.mutate(IN_PROGRESS);
                                             }}>
@@ -94,7 +93,6 @@ const Orders: React.FC<OrdersDto> = ({ orders, status }) => {
                                             disabled={sendIconCondition(status)}
                                             aria-label="send"
                                             onClick={() => {
-                                                // UpdateOrderStatus({ status: SUCCESS }, id)
                                                 setOrderIdToUpdate(id);
                                                 mutation.mutate(SUCCESS);
                                             }}>
