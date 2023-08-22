@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { CssBaseline, Divider, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, useTheme } from '@mui/material';
+import { CssBaseline, Divider, IconButton, List, ListItem, ListItemIcon, Toolbar, useTheme } from '@mui/material';
 import { AppBar, Drawer, DrawerHeader, SidebarItem, sidebarData } from '../Sidebar/helper';
 import { Header } from '../Header/Header';
 import { UserDto } from '../../models/user.model';
