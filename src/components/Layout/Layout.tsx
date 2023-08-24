@@ -17,21 +17,18 @@ export default function Layout() {
             }
             <div className={`layout-container ${pathname !== "/" ? "margin-top-component" : ""} `}>
                 <Routes>
-                    {
-                        routes.map((route) =>
-                            <Route
-                                key={route.path}
-                                path={route.path}
-                                element={route.isProtected ?
-                                    <Protected isSignedIn={auth}>
-                                        <route.component />
-                                    </Protected>
-                                    :
+                    {routes.map((route) =>
+                        <Route
+                            key={route.path}
+                            path={route.path}
+                            element={route.isProtected ?
+                                <Protected isSignedIn={auth}>
                                     <route.component />
-                                }
-                            />
-                        )}
-
+                                </Protected>
+                                :
+                                <route.component />
+                            }
+                        />)}
                 </Routes>
             </div>
         </Box>

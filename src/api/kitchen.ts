@@ -1,4 +1,4 @@
-import { OrderStatusBody, OrdersStatusDto } from "../models/kitchen.model";
+import { OrderExitDateBody, OrderStatusBody, OrdersStatusDto } from "../models/kitchen.model";
 import { baseUrl } from "./base";
 
 export const getOrdersStatus = async (): Promise<OrdersStatusDto[]> => {
@@ -14,6 +14,17 @@ export const getOrdersByStatus = async (status: string) => {
 }
 
 export const updateOrderStatus = async (body: OrderStatusBody, id: string | undefined) => {
+    const requestOptions = {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+    };
+    const response = await fetch(`${baseUrl}orders/${id}`, requestOptions);
+    const data = await response.json();
+    return data;
+}
+
+export const updateOrderExitDateAndTime = async (body: OrderExitDateBody, id: string | undefined) => {
     const requestOptions = {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },

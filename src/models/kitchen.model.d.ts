@@ -14,3 +14,8 @@ export interface OrdersStatusDto {
 export interface OrderStatusBody {
     status: string
 }
+
+export interface OrderExitDateBody {
+    time: string
+    exit_date: string
+}

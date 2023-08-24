@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu } from "./components/Menu"
 import { Ticket } from "./components/Ticket"
-import { OrderDto } from "../../../../models/waiter.model";
+import { OrderDto } from "../../../models/waiter.model";
 import './waiter.scss'
 
 

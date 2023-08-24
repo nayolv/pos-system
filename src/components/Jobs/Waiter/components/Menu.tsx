@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { getCategories, getProductsByCategory } from '../../../../../api/waiter';
-import { CategoryDto, MenuDto, ProductDto } from '../../../../../models/waiter.model';
 import { useQuery } from '@tanstack/react-query';
-import { handleAddProduct } from '../../../../../helpers/Waiter/helper';
+import { CategoryDto, MenuDto, ProductDto } from '../../../../models/waiter.model';
+import { getCategories, getProductsByCategory } from '../../../../api/waiter';
+import { handleAddProduct } from '../../../../helpers/Waiter/helper';
 
 export const Menu: React.FC<MenuDto> = ({ setOrders, orders }) => {
   const [category, setCategory] = useState("bebidas");

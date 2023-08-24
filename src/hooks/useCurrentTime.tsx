@@ -6,8 +6,7 @@ export const useCurrentTime = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentTime(new Date());
-        }
-            , 1000);
+        }, 1000);
         return () => {
             clearInterval(intervalId);
         };
@@ -23,7 +22,7 @@ export const useCurrentTime = () => {
         hour12: false
     };
 
-    const formattedTime = new Intl.DateTimeFormat('es-ES', options).format(currentTime);
+    const formattedTime = new Intl.DateTimeFormat('es-ES', options).format(currentTime).replace(/\//g, '-');
 
     return {
         formattedTime

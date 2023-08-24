@@ -5,7 +5,7 @@ import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import './header.scss'
 
 const section = {
-  waiter: "Meseros",
+  waiter: "Menu & Órdenes",
   kitchen: "Cocina",
   admin: "Administrador"
 }

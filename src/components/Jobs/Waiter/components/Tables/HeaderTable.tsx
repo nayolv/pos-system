@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import TableRestaurantRoundedIcon from '@mui/icons-material/TableRestaurantRounded';
 import QueryBuilderRoundedIcon from '@mui/icons-material/QueryBuilderRounded';
-import { debounce } from '../../../../../../hepers/debounce';
-import { HeaderTableDto } from '../../../../../../models/waiter.model';
+import { HeaderTableDto } from '../../../../../models/waiter.model';
+import { debounce } from '../../../../../helpers/debounce';
+
 
 export const HeaderTable: React.FC<HeaderTableDto> = ({ formattedTime, table, setTable }) => {
-
     const handleInputChange = debounce((value: string) => {
         const parseValue = parseInt(value);
-
         if (value === '') return setTable('1');
         if (parseValue > 30) return setTable('30');
         if (parseValue === 0) return setTable('1');

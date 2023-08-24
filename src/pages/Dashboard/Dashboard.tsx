@@ -1,7 +1,6 @@
+import { Kitchen } from "@mui/icons-material";
+import { Waiter } from "../../components/Jobs/Waiter/Waiter";
 import { UserDto } from "../../models/user.model";
-import Admin from "./Jobs/Admin/Admin";
-import { Kitchen } from "./Jobs/Kitchen/Kitchen";
-import { Waiter } from "./Jobs/Waiter/Waiter";
 
 
 export const Dashboard = () => {
@@ -9,10 +8,9 @@ export const Dashboard = () => {
     const user: UserDto = userJSON ? JSON.parse(userJSON) : null;
 
     return (
-        <div className="">
+        <div className="">  Hay
             {user.role === "waiter" && <Waiter />}
             {user.role === "kitchen" && <Kitchen />}
-            {user.role === "admin" && <Admin />}
         </div>
     )
 }

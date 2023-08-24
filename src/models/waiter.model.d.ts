@@ -45,9 +45,8 @@ export interface OrderRequestBody {
     id?: string,
     table: string,
     products: OrderDto[]
-    entry_hour: string
-    exit_hour?: string
-    date: string
+    entry_date: string
+    exit_date?: string
     time?: string
     status: OrderStatus
 }

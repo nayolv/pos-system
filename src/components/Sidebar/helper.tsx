@@ -1,9 +1,11 @@
 /* eslint-disable react-refresh/only-export-components */
-import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
-import GradingIcon from '@mui/icons-material/Grading';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import MuiDrawer from '@mui/material/Drawer';
 import { styled, Theme, CSSObject } from '@mui/material/styles';
+import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
+import GradingIcon from '@mui/icons-material/Grading';
+import PeopleIcon from '@mui/icons-material/People';
+import FastfoodIcon from '@mui/icons-material/Fastfood';
 
 export type SidebarItem = {
     text: string
@@ -38,7 +40,16 @@ export const sidebarData: SidebarDto = {
         },
     ],
     "admin": [
-
+        {
+            text: "Empleados",
+            icon: <PeopleIcon />,
+            path: "/employees"
+        },
+        {
+            text: "Productos",
+            icon: <FastfoodIcon />,
+            path: "/products"
+        },
     ]
 }
 
@@ -93,10 +104,7 @@ export const AppBar = styled(MuiAppBar, {
     }),
 }));
 
-
 const drawerWidth = 240;
-
-
 
 export const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useQuery, } from "@tanstack/react-query";
-import { getOrdersByStatus, } from "../../../../api/kitchen";
-import { SUCCESS, } from "../../../../constants/constants";
 import { Orders } from "./Orders";
+import { SUCCESS } from "../../../constants/constants";
+import { getOrdersByStatus } from "../../../api/kitchen";
 
 export const ReadyOrders = () => {
     const [status] = useState(SUCCESS);

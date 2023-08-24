@@ -1,17 +1,19 @@
 import { useState } from 'react';
 import { Button } from '@mui/material';
-import { TicketDto } from '../../../../../models/waiter.model';
-import { WaiterTable } from './Tables/WaiterTable';
-import { useCurrentTime } from '../../../../../hooks/useCurrentTime';
-import { SuccessAlert } from '../../../../../components/Alerts/SuccessAlert';
-import { orderBody } from '../../../../../helpers/Waiter/helper';
 import { useMutation } from '@tanstack/react-query';
-import { createOrder } from '../../../../../api/waiter';
+import { WaiterTable } from './Tables/WaiterTable';
+import { TicketDto } from '../../../../models/waiter.model';
+import { useCurrentTime } from '../../../../hooks/useCurrentTime';
+import { createOrder } from '../../../../api/waiter';
+import { orderBody } from '../../../../helpers/Waiter/helper';
+import { SuccessAlert } from '../../../Alerts/SuccessAlert';
+
 
 export const Ticket: React.FC<TicketDto> = ({ orders, setOrders }) => {
   const [table, setTable] = useState<string>('');
   const [open, setOpen] = useState(false);
   const { formattedTime } = useCurrentTime();
+
   const sendValidation = orders.length == 0 || table === '' ? true : false;
 
   const mutation = useMutation(

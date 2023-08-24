@@ -1,10 +1,11 @@
-import { DataGrid, GridColDef, esES } from '@mui/x-data-grid';
+import { GridColDef, esES } from '@mui/x-data-grid';
 import { IconButton } from '@mui/material';
+import { HeaderTable } from './HeaderTable';
+import { OrderDto, WaiterActionsTable, WaiterTableDto } from '../../../../../models/waiter.model';
+import { Table } from '../../../../Tables/Table';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import { OrderDto, WaiterActionsTable, WaiterTableDto } from '../../../../../../models/waiter.model';
-import { HeaderTable } from './HeaderTable';
 
 const RenderActions: React.FC<WaiterActionsTable> = ({ params, setOrders }) => {
 
@@ -62,17 +63,7 @@ export const WaiterTable: React.FC<WaiterTableDto> = ({ rows, setOrders, formatt
     return (
         <div className='waiter-table'>
             <HeaderTable formattedTime={formattedTime} table={table} setTable={setTable} />
-            <DataGrid
-                localeText={esES.components.MuiDataGrid.defaultProps.localeText}
-                rows={rows}
-                columns={columns}
-                initialState={{
-                    pagination: {
-                        paginationModel: { page: 0, pageSize: 5 },
-                    },
-                }}
-                pageSizeOptions={[5, 10]}
-            />
+            <Table lenguage={esES.components.MuiDataGrid.defaultProps.localeText} rows={rows} columns={columns} />
         </div>
     );
 }
